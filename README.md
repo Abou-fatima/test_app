@@ -236,5 +236,5 @@ This project is intended for learning, portfolio, and demo purposes.
 This repository is designed for study, demonstration, and technical evaluation. Replace the repository URL and project ownership information with your own GitHub profile or organization details before publishing publicly.
 
 ```bash
-git remote set-url origin https://github.com/your-username/task-manager-app.git
+git remote set-url origin https://github.com/Abou-fatima/test_app.git
 ```
