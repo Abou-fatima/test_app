@@ -66,6 +66,41 @@ A normal user flow is as follows:
 
 This is a small but complete task-management workflow that demonstrates state-driven UI behavior in Flutter.
 
+## Detailed runtime explanation
+
+The application is intentionally organized to separate responsibilities and make the logic easy to understand.
+
+### Main application startup
+`lib/main.dart` is the entry point. It sets up the application theme, localization, routes, and the provider layer. The app is wrapped in `MultiProvider`, which means all stateful classes are available to the UI without manually passing parameters through each screen.
+
+### State management
+The task logic is managed by a provider that stores the collection of tasks and exposes methods to:
+
+- create a task
+- edit a task
+- remove a task
+- toggle the completion state
+- retrieve current task data
+
+This provider is the central source of truth for the app. When state changes, every screen listening to that provider is rebuilt automatically, which keeps the UI synchronized.
+
+### Repositories and data flow
+The repository layer acts as the data access boundary. It isolates the logic for retrieving or modifying task records from the UI. Even though the app uses a simplified in-memory structure, the design is consistent with a more realistic production application where storage could later be replaced by SQLite, a backend API, or a more advanced persistence system.
+
+### Screens and UI composition
+Each screen is responsible for a specific purpose:
+
+- Dashboard: summary and overview
+- Task list: task browsing and actions
+- Add task: creation form and validation
+- Detail: full task metadata
+- Profile: session/user state display
+
+The widgets are kept focused and reusable, which makes the interface easier to maintain and extend over time.
+
+### Localization and theming
+The app includes localization support for English and French and uses a theme setup for consistent styling. This makes the project more user-friendly and demonstrates attention to product quality beyond basic functionality.
+
 ## After Testing in Flutter
 
 The project was reviewed and improved after running Flutter validation and checks. The app was not left in its initial state; the following adjustments were made to improve quality and make it more production-ready:
