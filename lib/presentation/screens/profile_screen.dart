@@ -11,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: const Text('Account'),
         centerTitle: true,
         elevation: 0,
       ),
@@ -24,7 +24,8 @@ class ProfileScreen extends StatelessWidget {
               radius: 50,
               backgroundColor: Colors.blue,
               child: Text(
-                authProvider.currentUser?.name.substring(0, 1).toUpperCase() ?? 'U',
+                authProvider.currentUser?.name.substring(0, 1).toUpperCase() ??
+                    'U',
                 style: const TextStyle(
                   fontSize: 40,
                   color: Colors.white,

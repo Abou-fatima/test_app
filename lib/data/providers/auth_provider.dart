@@ -4,7 +4,7 @@ import 'package:task_manager_app/data/repositories/user_repository.dart';
 
 class AuthProvider extends ChangeNotifier {
   final UserRepository _repository = UserRepositoryImpl();
-  
+
   User? _currentUser;
   bool _isLoading = false;
   String? _errorMessage;
@@ -17,14 +17,15 @@ class AuthProvider extends ChangeNotifier {
   Future<bool> login(String email, String password) async {
     _setLoading(true);
     try {
-      // Simulate login
-      await Future.delayed(const Duration(seconds: 1));
-      _currentUser = User(
+      await Future.delayed(const Duration(milliseconds: 200));
+      final user = User(
         id: '1',
         email: email,
         name: 'John Doe',
         createdAt: DateTime.now(),
       );
+      _currentUser = user;
+      await _repository.updateUser(user);
       _errorMessage = null;
       notifyListeners();
       return true;

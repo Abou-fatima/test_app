@@ -3,8 +3,11 @@ import 'package:task_manager_app/data/models/task.dart';
 import 'package:task_manager_app/data/repositories/task_repository.dart';
 
 class TaskProvider extends ChangeNotifier {
-  final TaskRepository _repository = TaskRepositoryImpl();
-  
+  TaskProvider({TaskRepository? repository})
+      : _repository = repository ?? TaskRepositoryImpl();
+
+  final TaskRepository _repository;
+
   List<Task> _tasks = [];
   bool _isLoading = false;
   String? _errorMessage;
@@ -12,10 +15,6 @@ class TaskProvider extends ChangeNotifier {
   List<Task> get tasks => _tasks;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
-
-  TaskProvider() {
-    loadTasks();
-  }
 
   Future<void> loadTasks() async {
     _setLoading(true);

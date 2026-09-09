@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager_app/presentation/screens/add_task_screen.dart';
 import 'package:task_manager_app/presentation/screens/home_screen.dart';
+import 'package:task_manager_app/presentation/screens/profile_screen.dart';
+import 'package:task_manager_app/presentation/screens/task_detail_screen.dart';
+import 'package:task_manager_app/presentation/screens/task_list_screen.dart';
 
 class AppRoutes {
   static const String home = '/';
@@ -12,7 +16,18 @@ class AppRoutes {
     switch (settings.name) {
       case home:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-      // Add more routes as needed
+      case tasks:
+        return MaterialPageRoute(builder: (_) => const TaskListScreen());
+      case addTask:
+        return MaterialPageRoute(builder: (_) => const AddTaskScreen());
+      case profile:
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case taskDetail:
+        final taskId =
+            settings.arguments is String ? settings.arguments as String : '';
+        return MaterialPageRoute(
+          builder: (_) => TaskDetailScreen(taskId: taskId),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(
@@ -22,6 +37,3 @@ class AppRoutes {
     }
   }
 }
-
-// Import this in app.dart
-// import 'package:task_manager_app/presentation/screens/home_screen.dart';

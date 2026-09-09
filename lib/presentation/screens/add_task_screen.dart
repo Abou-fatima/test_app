@@ -110,7 +110,7 @@ class AddTaskScreen extends HookWidget {
 
               // Priority
               DropdownButtonFormField<TaskPriority>(
-                value: priority.value,
+                initialValue: priority.value,
                 decoration: InputDecoration(
                   labelText:
                       appLocalizations?.translate('priority') ?? 'Priority',

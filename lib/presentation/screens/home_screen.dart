@@ -9,6 +9,15 @@ class HomeScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    useEffect(() {
+      Future.microtask(() {
+        if (context.mounted) {
+          context.read<TaskProvider>().loadTasks();
+        }
+      });
+      return null;
+    }, const []);
+
     final taskProvider = Provider.of<TaskProvider>(context);
     final tasks = taskProvider.tasks;
     final completedTasks = tasks.where((t) => t.isCompleted).length;
@@ -28,7 +37,17 @@ class HomeScreen extends HookWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Statistics Cards
+              Semantics(
+                label: 'Task Manager dashboard',
+                child: const Text(
+                  'Task Manager',
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   _buildStatCard(
@@ -57,7 +76,7 @@ class HomeScreen extends HookWidget {
                 ],
               ),
               const SizedBox(height: 24),
-              
+
               // Recent Tasks
               const Text(
                 'Recent Tasks',
@@ -67,7 +86,7 @@ class HomeScreen extends HookWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              
+
               if (taskProvider.isLoading)
                 const Center(
                   child: CircularProgressIndicator(),
@@ -118,7 +137,7 @@ class HomeScreen extends HookWidget {
                     return TaskCard(task: tasks[index]);
                   },
                 ),
-              
+
               if (tasks.length > 5)
                 Padding(
                   padding: const EdgeInsets.only(top: 12),

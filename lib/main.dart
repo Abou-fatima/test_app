@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:task_manager_app/app/app.dart';
+import 'package:task_manager_app/app/routes.dart';
 import 'package:task_manager_app/core/theme/theme.dart';
+import 'package:task_manager_app/data/providers/auth_provider.dart';
 import 'package:task_manager_app/data/providers/task_provider.dart';
 import 'package:task_manager_app/l10n/app_localizations.dart';
 
@@ -18,6 +20,7 @@ class TaskManagerApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => TaskProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: MaterialApp(
         title: 'Task Manager',
@@ -35,6 +38,7 @@ class TaskManagerApp extends StatelessWidget {
           Locale('fr', ''),
         ],
         home: const App(),
+        onGenerateRoute: AppRoutes.generateRoute,
         debugShowCheckedModeBanner: false,
       ),
     );

@@ -15,29 +15,25 @@ class TaskRepositoryImpl implements TaskRepository {
 
   @override
   Future<List<Task>> getTasks() async {
-    // Simulate network delay
-    await Future.delayed(const Duration(milliseconds: 500));
-    return List.from(_tasks);
+    return List.unmodifiable(_tasks);
   }
 
   @override
   Future<Task> getTask(String id) async {
-    await Future.delayed(const Duration(milliseconds: 300));
-    final task = _tasks.firstWhere((t) => t.id == id);
-    return task;
+    return _tasks.firstWhere((t) => t.id == id);
   }
 
   @override
   Future<Task> addTask(Task task) async {
-    await Future.delayed(const Duration(milliseconds: 500));
-    final newTask = task.copyWith(id: (++_idCounter).toString());
+    final newTask = task.copyWith(
+      id: task.id.isEmpty ? (++_idCounter).toString() : task.id,
+    );
     _tasks.add(newTask);
     return newTask;
   }
 
   @override
   Future<Task> updateTask(Task task) async {
-    await Future.delayed(const Duration(milliseconds: 500));
     final index = _tasks.indexWhere((t) => t.id == task.id);
     if (index != -1) {
       _tasks[index] = task;
@@ -48,13 +44,11 @@ class TaskRepositoryImpl implements TaskRepository {
 
   @override
   Future<void> deleteTask(String id) async {
-    await Future.delayed(const Duration(milliseconds: 500));
     _tasks.removeWhere((t) => t.id == id);
   }
 
   @override
   Future<void> toggleTaskCompletion(String id) async {
-    await Future.delayed(const Duration(milliseconds: 300));
     final index = _tasks.indexWhere((t) => t.id == id);
     if (index != -1) {
       final task = _tasks[index];

@@ -67,7 +67,7 @@ class TaskDetailScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: task.priority.color.withOpacity(0.2),
+                    color: task.priority.color.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -125,7 +125,7 @@ class TaskDetailScreen extends StatelessWidget {
                 children: task.tags.map((tag) {
                   return Chip(
                     label: Text(tag),
-                    backgroundColor: Colors.blue.withOpacity(0.1),
+                    backgroundColor: Colors.blue.withValues(alpha: 0.1),
                   );
                 }).toList(),
               ),
