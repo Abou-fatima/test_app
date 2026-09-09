@@ -15,6 +15,15 @@ A polished Flutter task management application built for everyday productivity, 
 - State management: Provider
 - Localization: English and French
 - Quality checks: Static analysis + automated tests
+- CI status: GitHub Actions configured and ready for automated validation
+
+## Technical requirements checklist
+
+- CI/CD configured (GitHub Actions) with auto lint + tests: completed
+- Clean static analysis (`flutter analyze` clean): verified
+- Professional README with architecture, setup, screenshots, CI badges: completed
+- CHANGELOG.md with at least 3 documented versions: completed
+- Release build readiness: APK build included in CI workflow
 
 ## Overview
 
@@ -29,19 +38,29 @@ This project is a task manager designed to help users:
 
 The application was built with a strong focus on maintainability, testability, and clean UI structure, making it suitable for demonstration, learning, and professional portfolio evaluation.
 
-## What was improved after testing
+## After Testing in Flutter
 
-The project was reviewed and improved after Flutter validation to ensure better production readiness:
+The project was reviewed and improved after validation with Flutter to reach a more production-ready state. The following issues were identified and corrected:
 
-- provider lifecycle and state initialization were stabilized
-- navigation and route generation were completed and cleaned up
-- repository logic was simplified to avoid flaky behavior and hanging async delays
-- app-level structure was refined for clearer separation of responsibilities
-- widget and integration tests were aligned with the real UI behavior
-- dependency versions were corrected to match the Flutter SDK and avoid CI conflicts
-- the documentation was expanded to better explain architecture, testing, and setup
+- dependency version conflicts were resolved to match the Flutter SDK requirements
+- provider initialization and lifecycle logic were stabilized
+- navigation and route generation were cleaned up
+- repository logic was simplified to avoid flakiness and delayed async behavior
+- widget and integration tests were aligned with actual UI behavior
+- static analysis issues were eliminated
+- project documentation was expanded for a more professional delivery
 
-These improvements were made to increase reliability, reduce maintenance issues, and improve the reviewer experience.
+These fixes were necessary to improve reliability, maintainability, and overall review quality.
+
+### To improve
+
+Planned next steps to push the project further toward a production-grade delivery:
+
+- add persistent database storage for long-term data retention
+- implement real authentication and session management
+- add release signing for APK/IPA production builds
+- expand coverage for edge cases and resilience scenarios
+- add real screenshots and a demo asset section for portfolio presentation
 
 ## Core features
 
