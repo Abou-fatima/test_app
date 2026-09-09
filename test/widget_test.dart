@@ -12,7 +12,8 @@ import 'package:task_manager_app/main.dart';
 void main() {
   testWidgets('app builds', (WidgetTester tester) async {
     await tester.pumpWidget(const TaskManagerApp());
+    await tester.pumpAndSettle();
 
-    expect(find.text('Task Manager'), findsOneWidget);
+    expect(find.text('Dashboard'), findsOneWidget);
   });
 }

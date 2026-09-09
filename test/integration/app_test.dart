@@ -36,7 +36,7 @@ void main() {
       await tester.tap(profileTab);
       await tester.pumpAndSettle();
 
-      expect(find.text('Profile'), findsOneWidget);
+      expect(find.text('Account'), findsOneWidget);
     });
   });
 }
