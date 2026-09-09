@@ -38,6 +38,34 @@ This project is a task manager designed to help users:
 
 The application was built with a strong focus on maintainability, testability, and clean UI structure, making it suitable for demonstration, learning, and professional portfolio evaluation.
 
+## How the app works
+
+The app starts from the main entry point in `lib/main.dart`, where the application builds the provider tree and initializes the Material app with localization and navigation configuration.
+
+When the app launches:
+
+1. `TaskProvider` is created to manage task state such as adding, deleting, toggling completion, and listing tasks.
+2. `AuthProvider` is created to manage the session-like user profile experience.
+3. The app loads the main shell, which contains the bottom navigation and the active screen.
+4. The user can move between the dashboard, task list, add-task form, detail view, and profile screen.
+5. Every interaction with tasks updates the state through the provider, which triggers the UI to refresh automatically.
+
+This structure makes the app reactive and easy to follow, while keeping logic separate from the visual interface.
+
+## User flow
+
+A normal user flow is as follows:
+
+1. The user opens the app and lands on the dashboard.
+2. The dashboard displays task statistics and a quick overview of current work.
+3. The user opens the task list to see all tasks.
+4. They add a new task using the form with title, description, priority, and due date.
+5. The task is saved in the app state and appears immediately in the list.
+6. The user can mark tasks as complete or delete them when they are no longer needed.
+7. The profile screen allows a simple user session simulation and status display.
+
+This is a small but complete task-management workflow that demonstrates state-driven UI behavior in Flutter.
+
 ## After Testing in Flutter
 
 The project was reviewed and improved after running Flutter validation and checks. The app was not left in its initial state; the following adjustments were made to improve quality and make it more production-ready:
@@ -143,7 +171,27 @@ The project is designed around separation of concerns:
 - screens consume provider values and render interfaces
 - widgets remain reusable and focused on presentation
 
-This structure improves maintainability and helps the app scale as features grow.
+In practice, the architecture works like this:
+
+- the screen requests data from a provider
+- the provider decides how state should change
+- the repository handles data operations or in-memory logic
+- the UI rebuilds automatically when state changes
+
+This separation improves maintainability and helps the app scale as features grow.
+
+## Why this project is useful for a portfolio
+
+This app demonstrates several important skills:
+
+- Flutter app architecture and project organization
+- state management with Provider
+- multi-screen navigation and UI flow design
+- localization and user experience improvements
+- automated testing and code quality validation
+- CI/CD workflow understanding and GitHub project readiness
+
+It is a strong example of a small application that follows common patterns used in real Flutter products.
 
 ## Tech stack
 
