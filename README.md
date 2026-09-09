@@ -40,27 +40,27 @@ The application was built with a strong focus on maintainability, testability, a
 
 ## After Testing in Flutter
 
-The project was reviewed and improved after validation with Flutter to reach a more production-ready state. The following issues were identified and corrected:
+The project was reviewed and improved after running Flutter validation and checks. The app was not left in its initial state; the following adjustments were made to improve quality and make it more production-ready:
 
-- dependency version conflicts were resolved to match the Flutter SDK requirements
-- provider initialization and lifecycle logic were stabilized
-- navigation and route generation were cleaned up
-- repository logic was simplified to avoid flakiness and delayed async behavior
-- widget and integration tests were aligned with actual UI behavior
-- static analysis issues were eliminated
-- project documentation was expanded for a more professional delivery
+- dependency conflicts were fixed to align with the Flutter SDK and avoid build issues
+- provider initialization and state management were stabilized
+- navigation and routes were cleaned up and organized more clearly
+- repository logic was simplified to avoid flaky asynchronous behavior
+- UI tests were aligned with the real app behavior to ensure reliable validation
+- static analysis was verified to remain clean
+- project documentation was improved to provide a clearer professional presentation
 
-These fixes were necessary to improve reliability, maintainability, and overall review quality.
+This step was necessary to ensure the app is not only functional, but also maintainable, testable, and review-ready.
 
 ### To improve
 
-Planned next steps to push the project further toward a production-grade delivery:
+The project is already in a solid state, but a few enhancements would further improve it for a full production-grade release:
 
-- add persistent database storage for long-term data retention
-- implement real authentication and session management
-- add release signing for APK/IPA production builds
-- expand coverage for edge cases and resilience scenarios
-- add real screenshots and a demo asset section for portfolio presentation
+- add persistent local database storage for long-term task retention
+- implement real authentication and secure session management
+- add release signing for APK/IPA distribution
+- expand automated tests to cover more edge cases
+- add real screenshots and app demo assets for a stronger presentation
 
 ## Core features
 
