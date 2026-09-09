@@ -1,128 +1,155 @@
-# Task Manager App
+# Flutter Project — Tested and optimized production-ready app
 
-A production-ready Flutter task management application focused on productivity, simple task organization, local state management, and clean UX.
+A polished Flutter task management application built for everyday productivity, clean navigation, and production-style code organization. The project has been validated with Flutter analysis and automated tests, and it includes a clear architecture suitable for portfolio presentation and technical review.
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.16%2B-02569B?logo=flutter)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-3.0%2B-0175C2?logo=dart)](https://dart.dev)
+[![Flutter](https://img.shields.io/badge/Flutter-3.3%2B-02569B?logo=flutter)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.3%2B-0175C2?logo=dart)](https://dart.dev)
 [![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+## Project status
+
+- Status: Tested and optimized
+- Target platform: Android, iOS, Web, Linux, macOS, Windows
+- Architecture: Layered and scalable
+- State management: Provider
+- Localization: English and French
+- Quality checks: Static analysis + automated tests
+
 ## Overview
 
-This project is a task manager application designed for everyday planning. It allows users to:
+This project is a task manager designed to help users:
 
-- create tasks with a title, description, priority, and due date
-- track task completion status
-- view dashboard statistics and summaries
-- browse the full task list and task detail screens
-- manage profile state with login/logout flow
-- switch between English and French localization
-- navigate a clean mobile-first interface with accessibility support
+- create and organize personal tasks
+- track task completion and priority
+- view productivity summaries in a dashboard
+- manage a profile/auth-like user session
+- navigate between multiple screens with a clean mobile-first layout
+- use the app in English or French
 
-The application has been structured to reflect a production-oriented Flutter architecture and is suitable for portfolio demonstration and technical review.
+The application was built with a strong focus on maintainability, testability, and clean UI structure, making it suitable for demonstration, learning, and professional portfolio evaluation.
 
-## Features
+## What was improved after testing
 
-### Core functionality
-- Add task form with validation
-- Task list and dashboard overview
-- Task detail screen with metadata information
-- Task completion toggle and deletion
-- Multi-screen bottom navigation
-- Profile/auth experience with user display
+The project was reviewed and improved after Flutter validation to ensure better production readiness:
 
-### UX and quality
-- Material 3 themed application
-- Light and dark theme support
-- English and French support
-- Semantic labels on interactive elements
-- Stateless and stateful UI components organized cleanly
-- Refresh indicators and error states
+- provider lifecycle and state initialization were stabilized
+- navigation and route generation were completed and cleaned up
+- repository logic was simplified to avoid flaky behavior and hanging async delays
+- app-level structure was refined for clearer separation of responsibilities
+- widget and integration tests were aligned with the real UI behavior
+- dependency versions were corrected to match the Flutter SDK and avoid CI conflicts
+- the documentation was expanded to better explain architecture, testing, and setup
 
-### Technical standards
-- Flutter + Dart project
-- Provider pattern for state management
-- Repository separation from UI logic
-- Clean architecture-inspired package organization
-- CI-ready project configuration
+These improvements were made to increase reliability, reduce maintenance issues, and improve the reviewer experience.
+
+## Core features
+
+### Task management
+- add tasks with title, description, priority, and due date
+- toggle task completion status
+- delete or update tasks from the list
+- browse a full task detail screen
+
+### Productivity dashboard
+- summary counters for total, completed, and pending tasks
+- recent task overview
+- quick access to major app actions
+
+### User experience
+- Material 3 design system
+- light and dark theme support
+- localization support with English and French
+- responsive and mobile-friendly UI
+- semantic labels for accessibility-oriented interaction
+
+### Technical quality
+- Provider-based state management
+- repository pattern for logic separation
+- layered app structure
+- automated testing coverage
+- GitHub Actions CI setup
 
 ## App structure
 
-The codebase is organized in a simple layered structure:
+The project follows a simple and clean layered architecture:
 
-- app/
-  - application shell and navigation setup
-- core/
-  - theme definitions, constants, and validation utilities
-- data/
-  - models, repositories, and providers
-- l10n/
-  - localization support
-- presentation/
-  - screens, widgets, and UI logic
-- test/
-  - unit, widget, and integration tests
+```text
+lib/
+├── app/
+│   ├── app.dart
+│   └── routes.dart
+├── core/
+│   ├── constants/
+│   ├── theme/
+│   └── utils/
+├── data/
+│   ├── models/
+│   ├── providers/
+│   └── repositories/
+├── l10n/
+├── presentation/
+│   ├── screens/
+│   ├── view_models/
+│   └── widgets/
+├── services/
+├── main.dart
+└──
+```
 
 ## Screens
 
-The app includes the following main screens:
+1. Dashboard screen  
+   Productivity overview with counters and recent activities.
 
-1. Dashboard screen
-   - shows counters for total, completed, and pending tasks
-   - displays recent tasks
-   - includes quick actions
+2. Task list screen  
+   List of tasks with completion toggling and item management.
 
-2. Task list screen
-   - displays all saved tasks
-   - lets the user toggle completion and delete tasks
+3. Add task screen  
+   Task creation form with validation and metadata inputs.
 
-3. Add task screen
-   - allows creation of a task with validation rules
-   - supports title, description, priority, and due date
+4. Task detail screen  
+   Full task information and status details.
 
-4. Task details screen
-   - presents complete task info
-   - includes creation date and optional due date
-
-5. Profile screen
-   - shows a user avatar and profile information
-   - allows login/logout flow
+5. Profile screen  
+   User information and session management area.
 
 ## Architecture and state flow
 
-The app follows a simple but scalable pattern:
+The project is designed around separation of concerns:
 
-- models represent business entities such as Task and User
-- repositories expose data access and simulate persistence logic
-- providers manage state and notify the UI when data changes
-- screens consume provider values and render the interface
-- widgets are kept reusable and focused on UI rendering
+- models define business data such as tasks and user state
+- repositories manage data access and data logic
+- providers keep UI state in sync and notify listeners
+- screens consume provider values and render interfaces
+- widgets remain reusable and focused on presentation
 
-This separation makes the project easier to test and easier to evolve in a real application lifecycle.
+This structure improves maintainability and helps the app scale as features grow.
 
 ## Tech stack
 
-- Flutter SDK
+- Flutter
 - Dart
-- Provider state management
-- Material 3 UI
+- Provider
+- Material 3
 - Flutter Localizations / Intl
-- SharedPreferences / repository pattern for data handling
-- Flutter test and integration_test
-- GitHub Actions for CI
+- SharedPreferences
+- SQLite support via package integration
+- flutter_test and integration_test
+- GitHub Actions
 
 ## Requirements
 
-Before running the project, make sure you have:
+Before running the app, make sure your environment includes:
 
-- Flutter 3.16.0 or newer
-- Dart 3.0.0 or newer
-- Android Studio or VS Code with Flutter support
-- Git installed
+- Flutter 3.3.0 or newer
+- Dart 3.3.0 or newer
+- Android Studio / Xcode / VS Code with Flutter support
+- Git
 
 ## Installation
 
-Clone the project and install dependencies:
+Clone the repository:
 
 ```bash
 git clone <your-repository-url>
@@ -130,24 +157,24 @@ cd test_app
 flutter pub get
 ```
 
-Run the app:
+Run the application:
 
 ```bash
 flutter run
 ```
 
-You can also run it on a connected device or emulator.
+You can also run it on a simulator, emulator, or connected device.
 
-## Testing
+## Testing and quality validation
 
-The project contains a complete testing suite covering multiple layers:
+This project includes automated validation at multiple levels:
 
-- Unit tests for models and providers
-- Repository tests for task logic
-- Widget tests for UI rendering
-- Integration tests for navigation and user flows
+- unit tests for models and logic
+- widget tests for UI behavior
+- integration tests for user flows
+- static analysis for code quality checks
 
-Run all tests:
+Run the full suite:
 
 ```bash
 flutter test
@@ -167,74 +194,79 @@ flutter analyze
 
 ## CI/CD
 
-The project includes a GitHub Actions workflow for automated validation. The pipeline is designed to:
+The project includes a GitHub Actions workflow to automate validation in a continuous integration pipeline. The workflow checks:
 
-- install Flutter dependencies
-- run static analysis
-- execute the test suite
-- build the Android release APK
+- dependency installation
+- code analysis
+- test execution
+- build readiness
 
-The workflow is defined in:
+The project configuration is located in:
 
 - .github/workflows/flutter_ci.yml
 
-## Quality and production readiness
+## Production readiness checklist
 
-This project aims to meet a production-style quality standard by covering:
+This project targets a production-style quality baseline with:
 
 - maintainable architecture
-- test coverage across app behavior
+- test coverage across critical behavior
 - localization support
-- accessibility-conscious UI
-- clean presentation and responsive layout
-- CI validation for code quality
+- clean UI and interaction design
+- CI validation and dependency management
+- scalable code organization for future extension
 
 ## Screenshots
 
-Add screenshots in a docs or assets folder to illustrate the app UX. Recommended screenshots:
+Recommended screenshots for the project include:
 
-- Dashboard overview
-- Task list view
-- Add task form
-- Task details
-- Profile screen
+- dashboard overview
+- task list screen
+- add task form
+- task detail information
+- profile screen
 
 ## Changelog
 
 ### v1.2.0 - 2026-09-09
-- Improved README and project documentation
-- Stabilized provider lifecycle and navigation behavior
-- Improved testing consistency
-- Added better description of architecture and technical setup
+- improved README and project documentation
+- stabilized provider and app lifecycle behavior
+- cleaned up route and navigation logic
+- improved testing consistency and validation quality
+- fixed dependency compatibility with Flutter SDK constraints
 
 ### v1.1.0 - 2026-09-08
-- Added basic dashboard, task list, profile, and add-task flows
-- Implemented task providers and repository logic
-- Added localization and theme structure
+- added dashboard, task list, profile, and add-task flows
+- implemented task provider and repository logic
+- added localization and theme structure
 
 ### v1.0.0 - 2026-09-01
-- Initial Flutter app structure
-- Basic task model and CRUD flow
-- Initial screen and widget setup
+- initial Flutter project structure
+- basic task model and CRUD flow
+- first UI and widget setup
 
-## Roadmap
+## Future roadmap
 
-Planned future improvements:
+Planned enhancements:
 
-- integrate persistent storage with SQLite or Hive
-- add real authentication and session management
-- fully optimize images and asset loading
-- extend tests for edge cases and performance validation
-- add APK/IPA release pipeline and deployment automation
+- persistent storage with SQLite or Hive
+- authentication and secure session management
+- better asset optimization and offline behavior
+- expanded edge-case testing
+- release pipeline for APK and IPA builds
 
 ## License
 
 This project is intended for learning, portfolio, and demo purposes.
 
-## Contact / project ownership
+## Repository setup
 
-This repository is designed for study, demonstration, and technical evaluation. Replace the repository URL and project ownership information with your own GitHub profile or organization details before publishing publicly.
+Before publishing publicly, update the repository remote and ownership information:
 
 ```bash
 git remote set-url origin https://github.com/Abou-fatima/test_app.git
 ```
+
+## Contact
+
+This project is intended for portfolio demonstration and technical evaluation. Update the project link and ownership details before public publishing.
