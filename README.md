@@ -1,83 +1,66 @@
-# TaskFlow — Flutter Task Management App
+# TaskFlow: Productivity Task Manager
 
-A polished Flutter productivity application designed to help users organize personal and professional tasks, track progress, and manage daily priorities through a clean and modern mobile experience.
+TaskFlow is a Flutter-based task management application designed to help users organize daily responsibilities, track progress, and improve personal productivity through a clean and structured mobile interface.
 
-This project demonstrates a strong understanding of Flutter architecture, state management, UI composition, localization, and software quality practices. It was built with a focus on maintainability, scalability, and professional presentation, making it suitable for technical review, portfolio showcase, and real-world product evaluation.
+The project was built to demonstrate practical Flutter development skills in state management, architecture, interface design, localization, and testability. It focuses on a real user workflow: adding tasks, tracking their completion, reviewing productivity data, and navigating across a simple, consistent application experience.
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.3%2B-02569B?logo=flutter)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.3%2B-0175C2?logo=dart)](https://dart.dev)
 [![Provider](https://img.shields.io/badge/State%20Management-Provider-5C2D91)](https://pub.dev/packages/provider)
+[![Material%203](https://img.shields.io/badge/UI-Material%203-0081CB)](https://m3.material.io/)
 [![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Project status
+## Project overview
 
-- Status: Production-ready demo / portfolio project
-- Target platforms: Android, iOS, Web, Linux, macOS, Windows
-- Architecture: Layered and scalable
-- State management: Provider
-- Localization: English and French
-- UI system: Material 3
-- Quality checks: Static analysis + automated testing
-- CI: GitHub Actions ready for validation
+This application addresses a common productivity problem: users need a simple and reliable way to manage daily tasks without losing track of progress. TaskFlow provides a lightweight but complete workflow for:
 
-## Why this project stands out
+- creating new tasks
+- prioritizing work
+- tracking completion status
+- reviewing productivity indicators
+- moving between screens with a coherent user experience
 
-TaskFlow is more than a basic task app. It is a complete example of a well-structured Flutter application that combines:
+The app is intentionally designed to be easy to understand, easy to extend, and representative of a real-world Flutter app structure.
 
-- clean separation of concerns
-- scalable state management
-- responsive UI design
-- localization support
-- reusable component architecture
-- testability and maintainability
-- professional documentation and project structure
+## Why this project is relevant
 
-This makes the app a strong candidate for technical assessment and a credible portfolio project.
+This project is not just a tutorial example. It demonstrates a set of software engineering skills that are valuable in modern mobile development:
 
-## Core features
+- layered application architecture
+- separation of concerns between UI, logic, and data access
+- state-driven interface updates with Provider
+- clean navigation and reusable screen structure
+- multilingual support with localization
+- maintainable code organization for future growth
+- automated validation with testing and analysis tools
 
-### Task management
-- create new tasks with title, description, priority, and due date
+## Functional features
+
+### Task creation and management
+- add tasks with title, description, priority, and due date
 - update existing tasks
-- mark tasks as completed or pending
-- delete tasks from the list
-- inspect task details in a dedicated screen
+- delete tasks when they are no longer needed
+- toggle completion status
+- review task details in a dedicated screen
 
-### Productivity dashboard
-- total, completed, and pending task counters
-- recent activity summary
-- direct access to major app actions
-- fast overview of work progress
+### Dashboard and productivity overview
+- total tasks count
+- completed tasks count
+- pending tasks count
+- recent task activity summary
+- visual overview of current work status
 
 ### User experience
-- Material 3 visual design
+- Material 3 design language
 - light and dark theme support
 - English and French localization
-- intuitive navigation between screens
-- mobile-first interface with clear hierarchy
+- responsive and mobile-friendly layout
+- clear navigation between screens
 
-### Technical quality
-- Provider-based state management
-- repository pattern for business logic separation
-- modular project structure
-- test-ready design
-- CI validation workflow
+## Application structure
 
-## Application flow
-
-1. The app launches from the main entry point and initializes the provider layer.
-2. The dashboard presents a productivity overview and current task status.
-3. The user navigates to the task list to browse all tasks.
-4. A task can be created, edited, marked complete, or removed.
-5. The profile screen simulates a user session and reinforces app polish.
-6. Every interaction updates the application state and refreshes the UI automatically.
-
-This flow demonstrates realistic interaction patterns in a Flutter app while keeping the architecture easy to understand and maintain.
-
-## Architecture overview
-
-The project follows a layered structure designed for clarity and maintainability:
+The project follows a layered architecture that keeps responsibilities separated and easy to maintain:
 
 ```text
 lib/
@@ -103,30 +86,41 @@ lib/
 ```
 
 ### State management
-The app uses `Provider` to manage application state efficiently. The provider layer acts as the single source of truth for task data and user session state. When data changes, all subscribed UI elements rebuild automatically.
+The app uses `Provider` to manage the task list and user session state. This pattern allows the UI to react to state changes efficiently and keeps the logic separate from the visual layer.
 
-### Repository pattern
-Repositories isolate data access logic from the presentation layer. This keeps the logic testable and easier to replace later with persistent storage such as SQLite, Hive, or a REST API.
+### Repository layer
+Repositories handle data-related responsibilities and isolate business logic from the screens. This helps keep the code organized and makes future integration with persistent storage easier.
 
-### UI layer
-The screens and widgets are responsible for rendering interfaces based on current state. Each component is kept focused and reusable, which improves code readability and reduces coupling.
+### UI composition
+Screens and widgets are intentionally focused and reusable, making the app easier to test, extend, and review.
 
-## Screens
+## Core screens
 
 ### Dashboard
-A productivity overview with counters, summary cards, and quick task insights.
+A summary screen that shows productivity information and task progression.
 
 ### Task list
-Displays all tasks with completion toggling, quick actions, and clean browsing.
+Displays all tasks and supports completion toggling and task management actions.
 
-### Add task
-Form-based task creation with metadata such as title, description, priority, and due date.
+### Add task form
+Collects task details and validates the creation flow.
 
-### Task details
-Shows the full task information and its current status in a dedicated screen.
+### Task detail page
+Shows the complete metadata of a task in a dedicated screen.
 
-### Profile
-A simple session-style profile experience with user information and state display.
+### Profile screen
+Presents a simple session-like user experience and keeps the app experience coherent.
+
+## User flow
+
+1. The user opens the app and lands on the dashboard.
+2. The dashboard presents task statistics and an overview of current activity.
+3. The user navigates to the task list.
+4. A new task is created using the form.
+5. The task appears immediately in the list and can be updated or completed.
+6. The profile screen confirms the current user state and app session context.
+
+This workflow reflects a practical task lifecycle and highlights how Flutter state-driven UIs work in real applications.
 
 ## Technical stack
 
@@ -134,15 +128,15 @@ A simple session-style profile experience with user information and state displa
 - Dart
 - Provider
 - Material 3
-- Intl / Flutter Localizations
+- Flutter Localizations / Intl
 - SharedPreferences
-- SQLite-ready project structure
+- SQLite-ready architecture
 - Flutter test and integration test
 - GitHub Actions
 
 ## Requirements
 
-Before running the app, ensure your environment includes:
+Before running the application, ensure the following tools are installed:
 
 - Flutter 3.3.0 or newer
 - Dart 3.3.0 or newer
@@ -165,18 +159,18 @@ Run the app:
 flutter run
 ```
 
-You can also run it on an emulator, simulator, or connected physical device.
+You can also test it on an emulator, simulator, or a physical device.
 
 ## Testing and quality assurance
 
-This project includes automated validation at multiple levels:
+The project includes validation at multiple levels to improve quality and confidence:
 
-- widget tests for UI logic
+- widget tests for UI behavior
 - integration tests for user flows
-- static analysis for quality assurance
-- CI pipeline for automated validation
+- static analysis for code quality
+- CI pipeline readiness for automated validation
 
-Run the complete test suite:
+Run the full test suite:
 
 ```bash
 flutter test
@@ -194,66 +188,64 @@ Run static analysis:
 flutter analyze
 ```
 
-## CI/CD
+## CI/CD readiness
 
-The project is organized to support a continuous integration workflow. A typical GitHub Actions pipeline can validate:
+The project is organized to support continuous integration workflows. A GitHub Actions pipeline can validate:
 
 - dependency installation
 - linting and static analysis
 - automated test execution
-- build readiness for release checks
+- build readiness checks
 
-The CI configuration is located in:
+Project configuration is expected under:
 
 - `.github/workflows/flutter_ci.yml`
 
-## Production-readiness checklist
+## Production-oriented quality checklist
 
-This project was designed with several production-style principles in mind:
+This project was designed around several production-style principles:
 
 - maintainable architecture
 - clear separation of concerns
-- testable business logic
-- localization-ready interface
-- responsive and modern UI
-- CI readiness and documentation quality
-- scalable structure for future extension
+- testable logic
+- multilingual interface support
+- modern Material 3 design
+- scalable structure for future features
+- documentation suitable for review and presentation
 
-## Project improvements after validation
+## Improvements made during validation
 
-After running Flutter checks and reviewing the application, several improvements were made to strengthen quality and reliability:
+After reviewing the app and validating it with Flutter tools, several improvements were applied to strengthen reliability and maintainability:
 
 - dependency compatibility was aligned with the active Flutter SDK
 - provider initialization was stabilized
-- navigation and route organization were cleaned up
-- repository logic was simplified and made more predictable
-- UI and test behavior were aligned with real usage
-- project documentation was refined for professional presentation
-- analysis and validation were verified to remain clean
+- navigation logic was cleaned up and organized more clearly
+- repository behavior was simplified to reduce inconsistency
+- UI interactions were aligned with real app behavior
+- documentation was refined for a more professional presentation
+- analysis and quality checks were reviewed to ensure clean validation
 
-These changes ensure the app is not only functional, but also maintainable, review-friendly, and better suited for technical evaluation.
+These changes improve the overall quality of the project and better prepare it for technical evaluation.
 
-## Sample user journey
+## Planned roadmap
 
-A typical user flow looks like this:
+Future improvements include:
 
-1. Open the app and land on the dashboard.
-2. View current productivity data and summary cards.
-3. Navigate to the task list.
-4. Add or update tasks using the form.
-5. Mark tasks as complete or delete them when no longer needed.
-6. Visit the profile screen to confirm the app session state.
-
-This demonstrates an end-to-end task lifecycle and reflects practical app behavior in production-style software.
+- persistent data storage with SQLite or Hive
+- secure authentication and profile management
+- APK and IPA release signing
+- expanded test coverage for edge cases
+- better asset optimization and offline support
+- additional screenshots and demo content
 
 ## Changelog
 
 ### v1.2.0 - 2026-09-09
-- improved project documentation and README quality
-- stabilized provider and app lifecycle behavior
-- cleaned up route structure and navigation consistency
-- refined test reliability and validation flow
-- aligned dependencies with Flutter SDK expectations
+- improved project documentation and README structure
+- stabilized provider behavior and app lifecycle handling
+- refined navigation flow and route organization
+- improved test consistency and validation quality
+- aligned dependencies with Flutter SDK compatibility requirements
 
 ### v1.1.0 - 2026-09-08
 - implemented dashboard, task list, add-task flow, and profile experience
@@ -262,27 +254,16 @@ This demonstrates an end-to-end task lifecycle and reflects practical app behavi
 
 ### v1.0.0 - 2026-09-01
 - initialized Flutter project structure
-- created base task model and CRUD flow
-- added early UI and screen scaffolding
-
-## Future roadmap
-
-Planned improvements include:
-
-- persistent storage with SQLite or Hive
-- secure authentication and profile management
-- release signing for APK and IPA builds
-- stronger test coverage for edge cases
-- improved asset optimization and offline behavior
-- additional app screenshots and demo assets
+- created basic task model and CRUD flow
+- added early UI scaffolding and app screens
 
 ## License
 
-This project is intended for learning, portfolio use, and technical demonstration purposes.
+This project is intended for learning, portfolio presentation, and technical demonstration purposes.
 
 ## Repository setup
 
-Before publishing publicly, you may update the repository remote:
+Before publishing the project publicly, you may update the remote repository URL:
 
 ```bash
 git remote set-url origin https://github.com/your-username/your-repository.git
@@ -290,8 +271,8 @@ git remote set-url origin https://github.com/your-username/your-repository.git
 
 ## Contact
 
-This project is intended for portfolio presentation and technical evaluation. Update ownership, repository links, and contact details before public release.
+This project is intended for portfolio showcase and technical evaluation. Update ownership, links, and contact details before public release.
 
 ## Summary
 
-TaskFlow is a practical Flutter application that demonstrates strong software design, user-centered UI, and modern app development practices. It is organized for readability, review, and future growth, while also being clear enough to showcase real technical skills during evaluation.
+TaskFlow demonstrates a practical and professional approach to Flutter application development. It combines a usable task management workflow with solid architecture, state management, localization, and maintainable project organization, making it a strong example of a real-world mobile product built with Flutter.
