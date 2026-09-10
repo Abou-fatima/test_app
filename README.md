@@ -13,29 +13,27 @@ The project was built to demonstrate practical Flutter development skills in sta
 
 ## Certification compliance checklist
 
-This project is designed to meet the requirements of the Flutter certification project. The application includes all required elements for production-oriented review and validation.
+This project is aligned with the Flutter certification project requirements and includes a production-style application with measurable validation evidence.
 
-### Required features
-- Functional app with 5 screens: Dashboard, Task List, Add Task, Task Detail, and Profile
-- Complete test suite implemented and organized by layer:
-  - 13 unit tests covering business logic, providers, and repositories
-  - 5 widget tests covering UI behavior and interaction
-  - 3 integration tests covering critical user flows
-- Performance-conscious structure using lightweight widgets, provider-based state updates, and reduced unnecessary rebuilds
-- Accessibility support through semantic labels and clear interactive elements
-- Internationalization support for English and French
+### Exact requirement mapping
+- Functional app with at least 5 screens: Dashboard, Task List, Add Task, Task Detail, and Profile
+- Complete test suite implemented by layer:
+  - 13 unit tests covering task model, repository logic, and provider behavior
+  - 5 widget tests covering UI validation and component interaction
+  - 3 integration tests covering launch, navigation, and end-to-end user flow
+- Performance: lightweight widget structure, reduced unnecessary rebuilds, and optimized state updates through Provider
+- Accessibility: semantic labels and clear interactive elements for user actions
+- Internationalization: full support for English and French locales
+- CI/CD: GitHub Actions pipeline for dependency installation, linting, tests, coverage, and APK build
+- Static analysis: clean result from `flutter analyze`
+- Professional documentation: architecture overview, setup, badges, testing commands, and changelog
+- Version history: 3 documented releases in `CHANGELOG.md`
 
-### Technical requirements
-- CI/CD configured with GitHub Actions for dependency installation, analysis, and test execution
-- Clean static analysis via `flutter analyze`
-- Professional README including architecture, setup, screenshots, and badges
-- `CHANGELOG.md` with 3 documented project versions
-
-### Project verification
-- Tests: passed with `flutter test`
-- Analysis: passed with `flutter analyze`
-- CI workflow: available in `.github/workflows/flutter_ci.yml`
-- APK build step: included in the GitHub Actions pipeline
+### Verified status
+- `flutter test` → passed
+- `flutter analyze` → passed with no issues
+- `.github/workflows/flutter_ci.yml` → configured
+- APK build job → included in CI pipeline
 
 ## Project overview
 
