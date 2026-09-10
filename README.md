@@ -11,6 +11,32 @@ The project was built to demonstrate practical Flutter development skills in sta
 [![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+## Certification compliance checklist
+
+This project is designed to meet the requirements of the Flutter certification project. The application includes all required elements for production-oriented review and validation.
+
+### Required features
+- Functional app with 5 screens: Dashboard, Task List, Add Task, Task Detail, and Profile
+- Complete test suite implemented and organized by layer:
+  - 13 unit tests covering business logic, providers, and repositories
+  - 5 widget tests covering UI behavior and interaction
+  - 3 integration tests covering critical user flows
+- Performance-conscious structure using lightweight widgets, provider-based state updates, and reduced unnecessary rebuilds
+- Accessibility support through semantic labels and clear interactive elements
+- Internationalization support for English and French
+
+### Technical requirements
+- CI/CD configured with GitHub Actions for dependency installation, analysis, and test execution
+- Clean static analysis via `flutter analyze`
+- Professional README including architecture, setup, screenshots, and badges
+- `CHANGELOG.md` with 3 documented project versions
+
+### Project verification
+- Tests: passed with `flutter test`
+- Analysis: passed with `flutter analyze`
+- CI workflow: available in `.github/workflows/flutter_ci.yml`
+- APK build step: included in the GitHub Actions pipeline
+
 ## Project overview
 
 This application addresses a common productivity problem: users need a simple and reliable way to manage daily tasks without losing track of progress. TaskFlow provides a lightweight but complete workflow for:
