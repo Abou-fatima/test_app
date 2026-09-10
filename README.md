@@ -433,13 +433,3 @@ This project demonstrates several important technical skills:
 - CI/CD readiness for GitHub Actions
 
 It is a good example of a small but complete application that follows common patterns used in real-world mobile projects.
-
-## To improve
-
-Although the application is already functional and tested, several improvements could make it even more production-ready:
-
-- add persistent local storage for long-term task retention
-- implement real authentication and secure user session management
-- add APK/IPA signing and deployment pipeline
-- extend the test suite for more edge cases and resilience scenarios
-- add real screenshots and demo assets for a stronger portfolio presentation
